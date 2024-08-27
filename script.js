@@ -6,21 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function extractASIN(url) {
+        // Usar una expresión regular para extraer el ASIN de la URL
         const asinMatch = url.match(/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/);
         return asinMatch ? asinMatch[1] : null;
     }
 
     function generateImageUrl(asin) {
+        // Generar la URL de la imagen del producto
         return `https://m.media-amazon.com/images/I/${asin}._SL500_.jpg`;
     }
 
     function checkImage(url) {
+        // Verificar si la imagen está disponible usando fetch
         return fetch(url, { method: 'HEAD' })
             .then(response => response.ok)
             .catch(() => false);
     }
 
     function shuffleArray(array) {
+        // Mezclar el array para mostrar productos en orden aleatorio
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
@@ -33,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
+
         const img = document.createElement('img');
         img.alt = product.name;
 
