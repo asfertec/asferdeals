@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const products = [
-        { id: 1, name: 'Producto 1', url: 'https://www.amazon.com/HUNTER-Original-Short-Boots-Women/dp/B09ZSPXX6Q?&linkCode=ll1&tag=asfertec-20&linkId=dc8e3849ad0470d04608aeab96d1e185&language=en_US&ref_=as_li_ss_tl' },
-        { id: 2, name: 'Producto 2', url: 'https://www.amazon.com/dp/B07FZ8S74R' },
+        { id: 1, name: 'Producto 1', url: https://www.amazon.com/HUNTER-Original-Short-Boots-Women/dp/B09ZSPXX6Q?&linkCode=ll1&tag=asfertec-20&linkId=dc8e3849ad0470d04608aeab96d1e185&language=en_US&ref_=as_li_ss_tl },
+        { id: 2, name: 'Producto 2', url: https://www.amazon.com/Travel-Umbrella-Protection-Windproof-Compact/dp/B09B1QV5GF?th=1&linkCode=ll1&tag=asfertec-20&linkId=3fda0e0b53e2258c484b768821d2ce24&language=en_US&ref_=as_li_ss_tl },
         { id: 3, name: 'Producto 3', url: 'https://www.amazon.com/dp/B08N5WRLDK' },
         { id: 4, name: 'Producto 4', url: 'https://www.amazon.com/dp/B089KV4YYX' },
         { id: 5, name: 'Producto 5', url: 'https://www.amazon.com/dp/B09156B7TM' },
