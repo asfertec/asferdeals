@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return `https://m.media-amazon.com/images/I/${asin}._SL500_.jpg`;
     }
 
+    function checkImage(url) {
+        return fetch(url, { method: 'HEAD' })
+            .then(response => response.ok)
+            .catch(() => false);
+    }
+
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -27,15 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
-        productDiv.innerHTML = `
-            <img src="${imageUrl}" alt="${product.name}">
-            <div class="product-info">
-                <h2>${product.name}</h2>
-            </div>
-        `;
+        const img = document.createElement('img');
+        img.alt = product.name;
+
+        // Verificar la imagen antes de asignarla
+        checkImage(imageUrl).then(isAvailable => {
+            img.src = isAvailable ? imageUrl : 'https://via.placeholder.com/150';
+        });
+
+        productDiv.appendChild(img);
+
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
+        const productName = document.createElement('h2');
+        productName.textContent = product.name;
+        productInfo.appendChild(productName);
+
+        productDiv.appendChild(productInfo);
+        
         productDiv.addEventListener('click', () => {
             window.location.href = product.url;
         });
+
         return productDiv;
     }
 
