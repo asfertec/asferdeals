@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const products = [
-        { id: 1, name: Producto 1 , url: https://www.amazon.com/QIYVLOS-Organizer-Multi-Functional-Organizers-Compartments/dp/B0CJMDVVV2?th=1&linkCode=ll1&tag=asfertec-20&linkId=22e286498072aa149de6ba9b12f4790b&language=en_US&ref_=as_li_ss_tl },
-        { id: 1, name: Producto 2, url: https://www.amazon.com/Travel-Umbrella-Protection-Windproof-Compact/dp/B09B1QV5GF?th=1&linkCode=ll1&tag=asfertec-20&linkId=3fda0e0b53e2258c484b768821d2ce24&language=en_US&ref_=as_li_ss_tl },
-
-        
+        { id: 1, name: 'Producto 1', url: 'https://www.amazon.com/QIYVLOS-Organizer-Multi-Functional-Organizers-Compartments/dp/B0CJMDVVV2?th=1&linkCode=ll1&tag=asfertec-20&linkId=22e286498072aa149de6ba9b12f4790b&language=en_US&ref_=as_li_ss_tl' },
+        { id: 2, name: 'Producto 2', url: 'https://www.amazon.com/Travel-Umbrella-Protection-Windproof-Compact/dp/B09B1QV5GF?th=1&linkCode=ll1&tag=asfertec-20&linkId=3fda0e0b53e2258c484b768821d2ce24&language=en_US&ref_=as_li_ss_tl' },
         // Añade más productos aquí siguiendo este formato
     ];
 
