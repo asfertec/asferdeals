@@ -1,20 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const products = [
-        { id: 1, name: 'Producto 1', url: https://www.amazon.com/HUNTER-Original-Short-Boots-Women/dp/B09ZSPXX6Q?&linkCode=ll1&tag=asfertec-20&linkId=dc8e3849ad0470d04608aeab96d1e185&language=en_US&ref_=as_li_ss_tl },
-        { id: 2, name: 'Producto 2', url: https://www.amazon.com/Travel-Umbrella-Protection-Windproof-Compact/dp/B09B1QV5GF?th=1&linkCode=ll1&tag=asfertec-20&linkId=3fda0e0b53e2258c484b768821d2ce24&language=en_US&ref_=as_li_ss_tl },
-        { id: 3, name: 'Producto 3', url: 'https://www.amazon.com/dp/B08N5WRLDK' },
-        { id: 4, name: 'Producto 4', url: 'https://www.amazon.com/dp/B089KV4YYX' },
-        { id: 5, name: 'Producto 5', url: 'https://www.amazon.com/dp/B09156B7TM' },
-        // Añadir más productos aquí con enlaces largos
+        { id: 1, name: 'Travel Umbrella - Protection Windproof Compact', url: 'https://www.amazon.com/Travel-Umbrella-Protection-Windproof-Compact/dp/B09B1QV5GF?th=1&linkCode=ll1&tag=asfertec-20&linkId=3fda0e0b53e2258c484b768821d2ce24&language=en_US&ref_=as_li_ss_tl' },
+        // Añade más productos aquí siguiendo este formato
     ];
 
     function extractASIN(url) {
-        const asinMatch = url.match(/\/dp\/([A-Z0-9]{10})/);
+        const asinMatch = url.match(/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/);
         return asinMatch ? asinMatch[1] : null;
     }
 
     function generateImageUrl(asin) {
-        return `https://images-na.ssl-images-amazon.com/images/I/${asin}.jpg`;
+        return `https://m.media-amazon.com/images/I/${asin}._SL500_.jpg`;
     }
 
     function shuffleArray(array) {
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createProductElement(product) {
         const asin = extractASIN(product.url);
         const imageUrl = asin ? generateImageUrl(asin) : 'https://via.placeholder.com/150';
-        
+
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
