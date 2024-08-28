@@ -20,12 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(() => false);
     }
 
-    function createProductLinkElement(url) {
-        const link = document.createElement('a');
-        link.href = url;
-        link.textContent = url;
-        link.target = '_blank';
-        return link;
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
     }
 
     function createProductElement(url) {
@@ -53,29 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         productDiv.appendChild(productInfo);
 
         productDiv.addEventListener('click', () => {
-            window.location.href = url;
+            shuffleAndDisplayProducts();
+            window.open(url, '_blank');
         });
 
         return productDiv;
     }
 
-    function loadProductLinks() {
-        const linkList = document.getElementById('product-links');
-        productLinks.forEach(link => {
-            const listItem = document.createElement('li');
-            listItem.appendChild(createProductLinkElement(link));
-            linkList.appendChild(listItem);
-        });
-    }
-
-    function loadProducts() {
+    function shuffleAndDisplayProducts() {
         const productGrid = document.getElementById('product-grid');
+        productGrid.innerHTML = '';  // Limpia la cuadrícula
+        shuffleArray(productLinks);  // Reorganiza los enlaces
         productLinks.forEach(link => {
             const productElement = createProductElement(link);
             productGrid.appendChild(productElement);
         });
     }
 
-    loadProductLinks();
-    loadProducts();
+    // Inicializar y mostrar los productos
+    shuffleAndDisplayProducts();
 });
