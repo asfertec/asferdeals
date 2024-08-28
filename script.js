@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function extractASIN(url) {
+        // El regex se ajusta para encontrar el ASIN en la URL
         const asinMatch = url.match(/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/);
         return asinMatch ? asinMatch[1] : null;
     }
 
     function generateImageUrl(asin) {
-        return `https://m.media-amazon.com/images/I/${asin}._SL500_.jpg`;
+        // Genera la URL de la imagen en base al ASIN
+        return `https://m.media-amazon.com/images/I/${asin}.jpg`;
     }
 
     function checkImage(url) {
