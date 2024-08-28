@@ -1,37 +1,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 h1 {
     text-align: center;
-    margin-top: 20px;
-}
-
-#link-list {
-    margin: 20px;
-}
-
-#product-links {
-    list-style-type: none;
-    padding: 0;
-}
-
-#product-links li {
-    margin-bottom: 10px;
-}
-
-#product-links a {
-    text-decoration: none;
-    color: #0073e6;
+    margin-bottom: 20px;
 }
 
 #product-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 20px;
     justify-content: center;
 }
 
@@ -41,6 +23,13 @@ h1 {
     overflow: hidden;
     width: 150px;
     text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
 }
 
 .product img {
